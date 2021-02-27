@@ -38,13 +38,21 @@ module.exports = {
             
         });
     },
-    // update_by_id:async function(req, res, next){
-    //     const {empresaNombre, telefono, email} = req.body;
-    //     await Empresa.findByIdAndUpdate(req.params.empresaID, function(err,changedEmpresa){
-    //         if (err) return console.log(err);
-
-    //     })
-    // }
+    update_by_id:async function(req, res, next){
+        const docupdate = req.body;
+        await Empresa.findByIdAndUpdate(req.params.id, docupdate , function(err){
+            if (err){
+                res.status(404).json({Error: "La Empresa con el ID: " + req.params.id+ " no fue encontrado", InternalError: err});
+            }else{
+                res.status(200).json({
+                    code: 200,
+                    status: 'success',
+                    message: `Se ha editado correctamente los campos de la Empresa con el ID: ${req.params.id}`,
+                    Changes: docupdate
+                });
+            }
+        });
+    },
     delete_by_id: async function(req, res, next){
         await Empresa.findByIdAndDelete(req.params.id, function(err){
             if (err){

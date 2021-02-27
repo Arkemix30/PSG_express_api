@@ -10,6 +10,8 @@ router.get('/:id', EmpresaController.find_by_id);
 /* POST New User*/
 router.post('/create', EmpresaController.create);
 
+router.put('/:id', EmpresaController.update_by_id);
+
 /* DELETE USER by ID */
 router.delete('/:id', EmpresaController.delete_by_id);
 

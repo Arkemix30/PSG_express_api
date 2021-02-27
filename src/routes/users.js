@@ -9,6 +9,7 @@ router.get('/:id', UserController.find_by_id);
 /* POST New User*/
 router.post('/create', UserController.create);
 
+
 /* DELETE USER by ID */
 router.delete('/:id', UserController.delete_by_id);
 
