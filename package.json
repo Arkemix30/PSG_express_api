@@ -19,7 +19,34 @@
     "mongoose": "^5.11.18"
   },
   "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "jasmine": "^3.6.4",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  },
+  "eslintConfig":{
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": ["airbnb-base", "prettier"],
+    "plugins": ["prettier"],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "class-methods-use-this": "off",
+      "no-param-reassign": "off",
+      "camelcase": "off",
+      "no-unused-vars'": ["error", { "argsIgnorePattern": "next" }]
+    }
   }
 }
