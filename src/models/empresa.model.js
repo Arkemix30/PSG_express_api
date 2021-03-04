@@ -20,6 +20,10 @@ const EmpresaSchema = new Schema({
         validate: [validateEmail, "Por favor, ingrese un correo valido"],
         match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/],
       },
+    OfertaID: {
+        type: Schema.Types.ObjectId,
+        ref: 'Oferta'
+      }
 },{
     versionKey: false   
   });

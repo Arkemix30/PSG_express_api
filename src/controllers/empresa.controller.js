@@ -2,7 +2,7 @@ const Empresa = require('../models/empresa.model');
 
 module.exports = {
     create: async function(req, res, next){
-        const newEmpresa = new Empresa({empresaNombre:req.body.empresaNombre, telefono: req.body.telefono, email: req.body.email });
+        const newEmpresa = new Empresa({empresaNombre:req.body.empresaNombre, telefono: req.body.telefono, email: req.body.email, OfertaID: req.body.OfertaID });
         await newEmpresa.save(function (err) {
             if (err) return res.status(406).json({
                 code: 406,

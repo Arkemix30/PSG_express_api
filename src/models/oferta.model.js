@@ -6,58 +6,64 @@ const ofertaSchema = new Schema({
         required: false,
         default: 'Industrial'
     },
-    Tipo_Posicion:{
+    TipoPasantia:{
         type: String,
         required: true
     },
-    Cantidad_Meses:{
+    CantidadMeses:{
         type: Number,
         required: true
     },
-    Cantidad_Pasantias:{
+    CantidadPasantias:{
         type: Number,
         required: true
     },
-    Cargo_A_Desempeñar:{
+    CargoADesempeñar:{
         type: [String],
         required: false
     },
-    Salario_Destinado:{
+    SalarioDestinado:{
         Cantidad:{ type: Number, required: false },
         Divisa: { type: String, required: false }
     },
-    Ubicacion_Oferta:{
+    UbicacionOferta:{
         type: String,
         required: true
     },
-    Estado_Civil:{
+    EstadoCivil:{
         type: String,
         required: true
     },
-    Sexo_Candidato:{
+    SexoCandidato:{
         type: String,
         required: true
     },
-    Nivel_Academico:{
+    NivelAcademico:{
         type: String,
         required: true
     },
-    Promedio_Academico:{
+    PromedioAcademico:{
         type: Number,
         required: false
     },
-    Nivel_Ingles:{
+    NivelIngles:{
         type: String,
         required: false
     },
-    Habilidades_Candidato:{
+    HabilidadesCandidato:{
         type: [String],
         required: false
     },
-    Otros_Requisitos:{
+    OtrosRequisitos:{
         type: [String],
         required: false
+    },
+    EmpresaID:{
+        type: Schema.Types.ObjectId,
+        ref: 'Empresa'
     }
-});
+},{
+    versionKey: false   
+  });
 
 module.exports = model('Oferta', ofertaSchema)

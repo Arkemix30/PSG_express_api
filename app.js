@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 const usersRoute = require('./src/routes/users');
 const empresasRoute = require('./src/routes/empresas');
+const ofertasRoute = require('./src/routes/ofertas');
 
 const MONGODB_URL = process.env.MONGODB_URL;
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true,
@@ -36,4 +37,5 @@ app.use(cookieParser())
 
 app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/empresas', empresasRoute);
+app.use('/api/v1/ofertas', ofertasRoute);
 module.exports = app;
